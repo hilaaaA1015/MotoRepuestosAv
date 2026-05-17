@@ -1,0 +1,145 @@
+/* ================= HERO ================= */
+
+.home{
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 8%;
+
+  overflow: hidden;
+
+  background-image: url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1600");
+
+  background-size: cover;
+  background-position: center;
+
+  /* IMAGEN FIJA */
+  background-attachment: fixed;
+}
+
+/* OVERLAY AZUL OSCURO */
+.overlay{
+  position: absolute;
+  inset: 0;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(7,17,34,0.90),
+    rgba(30,64,175,0.65)
+  );
+}
+
+/* CONTENIDO */
+.home-content{
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+
+  text-align: center;
+
+  color: white;
+}
+
+/* ETIQUETA */
+.tag{
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  margin-bottom: 25px;
+
+  border-radius: 50px;
+
+  background: rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(5px);
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+/* TITULO */
+.home-content h1{
+  font-size: 4rem;
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
+
+  font-weight: 800;
+
+  color: white;
+}
+
+/* TEXTO */
+.home-content p{
+  font-size: 1.2rem;
+
+  line-height: 1.8;
+
+  color: #d1d5db;
+
+  margin-bottom: 35px;
+}
+
+/* BOTONES */
+.hero-buttons{
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.hero-buttons button{
+  padding: 15px 30px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+/* BOTON PRINCIPAL */
+.btn-primary{
+  background: #2563eb;
+
+  color: white;
+}
+
+.btn-primary:hover{
+  transform: translateY(-4px);
+
+  background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .home-content h1{
+    font-size: 2.7rem;
+  }
+
+  .home-content p{
+    font-size: 1rem;
+  }
+
+}
