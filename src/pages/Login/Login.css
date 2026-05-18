@@ -1,0 +1,213 @@
+/* ================= LOGIN ================= */
+
+.login-page{
+  width:100%;
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:100px 20px 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #172033 0%,
+      #243247 50%,
+      #111827 100%
+    );
+}
+
+/* CARD */
+
+.login-container{
+  width:100%;
+  max-width:480px;
+
+  padding:45px 35px;
+
+  border-radius:28px;
+
+  background:rgba(255,255,255,.06);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,.30);
+
+  text-align:center;
+}
+
+/* LOGO */
+
+.login-logo{
+  width:130px;
+
+  margin:auto;
+  margin-bottom:15px;
+
+  display:block;
+}
+
+/* TITLES */
+
+.login-title{
+  color:white;
+
+  font-size:2.3rem;
+  font-weight:800;
+
+  margin-bottom:8px;
+}
+
+.login-subtitle{
+  color:#cbd5e1;
+
+  font-size:1rem;
+
+  margin-bottom:35px;
+}
+
+/* FORM */
+
+.login-form{
+  width:100%;
+}
+
+.login-form label{
+  display:block;
+
+  text-align:left;
+
+  margin-bottom:8px;
+  margin-top:18px;
+
+  color:#f1f5f9;
+
+  font-size:1rem;
+  font-weight:600;
+}
+
+.login-form input{
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+  outline:none;
+
+  border-radius:14px;
+
+  background:#0f172a;
+
+  border:1px solid #334155;
+
+  color:white;
+
+  font-size:1rem;
+
+  transition:.3s;
+}
+
+.login-form input:focus{
+  border-color:#3b82f6;
+
+  box-shadow:
+    0 0 12px rgba(59,130,246,.25);
+}
+
+/* RECOVER */
+
+.recover{
+  margin-top:12px;
+
+  text-align:right;
+}
+
+.recover a{
+  color:#60a5fa;
+
+  text-decoration:none;
+
+  font-size:.95rem;
+}
+
+/* BUTTON */
+
+.login-btn-submit{
+  width:100%;
+
+  margin-top:30px;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #3b82f6
+    );
+
+  color:white;
+
+  font-size:1.1rem;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.login-btn-submit:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 10px 20px rgba(59,130,246,.35);
+}
+
+/* REGISTER */
+
+.register{
+  margin-top:35px;
+
+  color:#cbd5e1;
+
+  font-size:1rem;
+}
+
+.register a{
+  color:#60a5fa;
+
+  text-decoration:none;
+
+  font-weight:700;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+  .login-page{
+    padding:90px 15px 30px;
+  }
+
+  .login-container{
+    padding:35px 22px;
+  }
+
+  .login-title{
+    font-size:2rem;
+  }
+
+  .login-logo{
+    width:110px;
+  }
+
+}

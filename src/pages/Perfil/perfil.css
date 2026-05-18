@@ -1,0 +1,198 @@
+/* ================= PERFIL ================= */
+
+.perfil-page{
+  width:100%;
+  min-height:100vh;
+
+  padding:120px 7% 60px;
+
+  /* MISMO FONDO QUE LOGIN */
+  background:
+    linear-gradient(
+      135deg,
+      #172033 0%,
+      #243247 50%,
+      #111827 100%
+    );
+}
+
+/* WELCOME */
+
+.perfil-welcome{
+  margin-bottom:40px;
+  text-align:center;
+}
+
+.perfil-welcome h1{
+  font-size:3rem;
+  color:white;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.perfil-welcome p{
+  color:#cbd5e1;
+  font-size:1.1rem;
+}
+
+/* GRID */
+
+.perfil-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+  gap:30px;
+}
+
+/* CARD (GLASS STYLE COMO LOGIN) */
+
+.perfil-card{
+  width:100%;
+
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(12px);
+
+  border-radius:28px;
+
+  padding:30px;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,.30);
+}
+
+.perfil-card h2{
+  color:white;
+  margin-bottom:25px;
+  font-size:1.8rem;
+  font-weight:800;
+}
+
+/* OPTIONS */
+
+.perfil-option{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  padding:18px 20px;
+  margin-bottom:14px;
+
+  border:none;
+  border-radius:16px;
+
+  cursor:pointer;
+
+  background:#0f172a;
+  border:1px solid #334155;
+
+  color:#e2e8f0;
+
+  font-size:1.05rem;
+
+  transition:.3s;
+}
+
+.perfil-option:hover{
+  transform:translateY(-2px);
+  border-color:#3b82f6;
+  box-shadow:0 10px 20px rgba(59,130,246,.15);
+}
+
+/* ACTIVE (AZUL LOGIN) */
+
+.perfil-option.active{
+  background:rgba(59,130,246,.15);
+  border:1px solid #3b82f6;
+}
+
+/* ICONOS (EMOJIS) */
+
+.perfil-option svg{
+  color:#60a5fa;
+}
+
+/* LOGOUT */
+
+.logout{
+  color:#f87171;
+  border:1px solid rgba(248,113,113,.3);
+}
+
+.logout:hover{
+  border-color:#f87171;
+  box-shadow:0 10px 20px rgba(248,113,113,.15);
+}
+
+/* CONTENT */
+
+.perfil-content{
+  margin-top:40px;
+
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(12px);
+
+  border-radius:28px;
+
+  padding:50px 30px;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,.30);
+
+  color:white;
+}
+
+/* EMPTY STATE */
+
+.empty-state{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  color:white;
+}
+
+.empty-state svg{
+  color:#60a5fa;
+  margin-bottom:20px;
+}
+
+.empty-state h2{
+  font-size:2rem;
+  margin-bottom:10px;
+}
+
+.empty-state p{
+  color:#cbd5e1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .perfil-page{
+    padding:110px 20px 50px;
+  }
+
+  .perfil-welcome h1{
+    font-size:2.3rem;
+  }
+
+  .perfil-card{
+    padding:22px;
+  }
+
+  .perfil-option{
+    padding:16px;
+    font-size:1rem;
+  }
+
+  .perfil-content{
+    padding:40px 20px;
+  }
+
+}

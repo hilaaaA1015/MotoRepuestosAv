@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Hero from "../../components/Hero/Hero";
-import Footer from "../../components/Footer/Footer";
+
 
 import img1 from "../../assets/images/carrusel1.png";
 import img2 from "../../assets/images/csrrusel2.png";
@@ -147,7 +147,7 @@ useEffect(() => {
 
 {/* ================= CATEGORIAS ================= */}
 
-<section className="products">
+<section className="products" id="productos">
 
   {categories.map((cat) => (
 
@@ -188,7 +188,7 @@ useEffect(() => {
   </div>
 
 </section>
-      <Footer />
+
     </>
   );
 }
