@@ -8,6 +8,7 @@ import Hero from "../../components/Hero/Hero";
 import img1  from "../../assets/images/carrusel1.png";
 import img2  from "../../assets/images/csrrusel2.png";
 import img3  from "../../assets/images/carrusel3.png";
+
 import img4  from "../../assets/productos/aceites/aceitemotul.jpg";
 import img5  from "../../assets/productos/bujias/bujiangk.jpg";
 import img6  from "../../assets/productos/cadenas/cadenadid.jpg";
@@ -19,6 +20,8 @@ import img11 from "../../assets/productos/kitluces/kitlucesled.jpg";
 import img12 from "../../assets/productos/llantas/llantapireli.jpg";
 import img13 from "../../assets/productos/retrovisores/retrovisores.jpg";
 
+import img14  from "../../assets/productos/aceites/Roshfrans.jpg";
+import img15  from "../../assets/productos/aceites/Yamalube.jpg";
 
 
 
@@ -47,6 +50,9 @@ useEffect(() => {
 //================================================
 //Asignacion de imagenes de la parte de accesorios
 //================================================
+//================================================
+//Asignacion de imagenes de la parte de accesorios
+//================================================
 const categories = [
   {
     title: "Accesorios",
@@ -54,15 +60,29 @@ const categories = [
       {
         id: 1,
         name: "Casco integral",
-        price: "$45.00",
+        price: "C$ 45.00",
         image: img7,
       },
 
       {
         id: 2,
-        name: "Guantes",
-        price: "$15.00",
+        name: "Guantes Fox",
+        price: "C$ 15.00",
         image: img10,
+      },
+
+      {
+        id: 3,
+        name: "Retrovisores",
+        price: "C$ 18.00",
+        image: img13,
+      },
+
+      {
+        id: 4,
+        name: "Kit Luces LED",
+        price: "C$ 22.00",
+        image: img11,
       },
     ],
   },
@@ -71,17 +91,31 @@ const categories = [
     title: "Repuestos",
     items: [
       {
-        id: 3,
-        name: "Cadena de moto",
-        price: "$30.00",
+        id: 5,
+        name: "Cadena DID",
+        price: "C$ 30.00",
         image: img6,
       },
 
       {
-        id: 4,
-        name: "Bujías",
-        price: "$8.00",
+        id: 6,
+        name: "Bujía NGK",
+        price: "C$ 8.00",
         image: img5,
+      },
+
+      {
+        id: 7,
+        name: "Filtro de aire",
+        price: "C$ 14.00",
+        image: img8,
+      },
+
+      {
+        id: 8,
+        name: "Freno delantero",
+        price: "C$ 25.00",
+        image: img9,
       },
     ],
   },
@@ -90,17 +124,31 @@ const categories = [
     title: "Lubricantes",
     items: [
       {
-        id: 5,
-        name: "Aceite para motor",
-        price: "$12.00",
+        id: 9,
+        name: "Aceite Motul",
+        price: "C$ 12.00",
         image: img4,
       },
 
       {
-        id: 6,
-        name: "Grasa industrial",
-        price: "$10.00",
-        image: img8,
+        id: 10,
+        name: "Aceite Roshfrans",
+        price: "C$ 11.00",
+        image: img14,
+      },
+
+      {
+        id: 11,
+        name: "Aceite Yamalube",
+        price: "C$ 13.00",
+        image: img15,
+      },
+
+      {
+        id: 12,
+        name: "Lubricante Premium",
+        price: "C$ 10.00",
+        image: img4,
       },
     ],
   },
@@ -110,16 +158,16 @@ const categories = [
 //Seccion donde se Asignan las Imagenes para el carrusel de productos destacados
 //==============================================================================
 const featuredProducts = [
-  { id: 1, name: "Casco LS2", price: "$55", image: img7 },
-  { id: 2, name: "Aceite Motul", price: "$12", image: img4 },
-  { id: 3, name: "Bujía NGK", price: "$8", image: img5 },
-  { id: 4, name: "Guantes Fox", price: "$18", image: img10 },
-  { id: 5, name: "Cadena DID", price: "$35", image: img6 },
-  { id: 6, name: "Freno delantero", price: "$25", image: img9 },
-  { id: 7, name: "Llanta Pirelli", price: "$70", image: img12 },
-  { id: 8, name: "Retrovisores", price: "$15", image: img13 },
-  { id: 9, name: "Kit de luces LED", price: "$22", image: img11 },
-  { id: 10, name: "Filtro de aire", price: "$14", image: img8 },
+  { id: 1, name: "Casco LS2", price: "C$ 1,450", image: img7 },
+  { id: 2, name: "Aceite Motul", price: "C$ 320", image: img4 },
+  { id: 3, name: "Bujía NGK", price: "C$ 180", image: img5 },
+  { id: 4, name: "Guantes Fox", price: "C$ 650", image: img10 },
+  { id: 5, name: "Cadena DID", price: "C$ 1,150", image: img6 },
+  { id: 6, name: "Freno delantero", price: "C$ 980", image: img9 },
+  { id: 7, name: "Llanta Pirelli", price: "C$ 2,800", image: img12 },
+  { id: 8, name: "Retrovisores", price: "C$ 420", image: img13 },
+  { id: 9, name: "Kit de luces LED", price: "C$ 850", image: img11 },
+  { id: 10, name: "Filtro de aire", price: "C$ 550", image: img8 },
 ];
 
 const imagenes = [img1, img2, img3];

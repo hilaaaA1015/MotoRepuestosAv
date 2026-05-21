@@ -8,6 +8,7 @@ import Contacto from "../pages/Contacto/Contacto";
 import Nosotros from "../pages/Nosotros/Nosotros";
 import Carrito from "../pages/Carrito/Carrito";
 import Login from "../pages/Login/Login";
+
 import Registro from "../pages/Registro/Registro";
 import RecuperarPassword from "../pages/RecuperarPassword/RecuperarPassword";
 import Perfil from "../pages/Perfil/Perfil";
