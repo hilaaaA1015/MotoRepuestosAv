@@ -1,10 +1,26 @@
 import { useState, useEffect } from "react";
 import Hero from "../../components/Hero/Hero";
 
+//=====================================================
+//Seccion donde se importan las imagenes en el proyecto
+//=====================================================
 
-import img1 from "../../assets/images/carrusel1.png";
-import img2 from "../../assets/images/csrrusel2.png";
-import img3 from "../../assets/images/carrusel3.png";
+import img1  from "../../assets/images/carrusel1.png";
+import img2  from "../../assets/images/csrrusel2.png";
+import img3  from "../../assets/images/carrusel3.png";
+import img4  from "../../assets/productos/aceites/aceitemotul.jpg";
+import img5  from "../../assets/productos/bujias/bujiangk.jpg";
+import img6  from "../../assets/productos/cadenas/cadenadid.jpg";
+import img7  from "../../assets/productos/cascos/cascols2.jpg";
+import img8  from "../../assets/productos/filtros/filtrodeaire.jpg";
+import img9  from "../../assets/productos/frenos/frenodelantero.jpg";
+import img10 from "../../assets/productos/guantes/guantesfox.jpg";
+import img11 from "../../assets/productos/kitluces/kitlucesled.jpg";
+import img12 from "../../assets/productos/llantas/llantapireli.jpg";
+import img13 from "../../assets/productos/retrovisores/retrovisores.jpg";
+
+
+
 
 import "./home.css";
 
@@ -12,7 +28,9 @@ export default function Home() {
 
   const [text, setText] = useState("");
 const fullText = "Encuentra repuestos, accesorios y lubricantes para tu moto al mejor precio.";
-
+//=========================================
+//UseEffect Primero
+//=========================================
 useEffect(() => {
   let i = 0;
 
@@ -26,54 +44,123 @@ useEffect(() => {
   return () => clearInterval(typing);
 }, []);
 
+//================================================
+//Asignacion de imagenes de la parte de accesorios
+//================================================
 const categories = [
   {
     title: "Accesorios",
     items: [
-      { id: 1, name: "Casco integral", price: "$45.00" },
-      { id: 2, name: "Guantes", price: "$15.00" },
+      {
+        id: 1,
+        name: "Casco integral",
+        price: "$45.00",
+        image: img7,
+      },
+
+      {
+        id: 2,
+        name: "Guantes",
+        price: "$15.00",
+        image: img10,
+      },
     ],
   },
+
   {
     title: "Repuestos",
     items: [
-      { id: 3, name: "Cadena de moto", price: "$30.00" },
-      { id: 4, name: "Bujías", price: "$8.00" },
+      {
+        id: 3,
+        name: "Cadena de moto",
+        price: "$30.00",
+        image: img6,
+      },
+
+      {
+        id: 4,
+        name: "Bujías",
+        price: "$8.00",
+        image: img5,
+      },
     ],
   },
+
   {
     title: "Lubricantes",
     items: [
-      { id: 5, name: "Aceite para motor", price: "$12.00" },
-      { id: 6, name: "Grasa industrial", price: "$10.00" },
+      {
+        id: 5,
+        name: "Aceite para motor",
+        price: "$12.00",
+        image: img4,
+      },
+
+      {
+        id: 6,
+        name: "Grasa industrial",
+        price: "$10.00",
+        image: img8,
+      },
     ],
   },
 ];
 
+//==============================================================================
+//Seccion donde se Asignan las Imagenes para el carrusel de productos destacados
+//==============================================================================
 const featuredProducts = [
-  { id: 1, name: "Casco LS2", price: "$55" },
-  { id: 2, name: "Aceite Motul", price: "$12" },
-  { id: 3, name: "Bujía NGK", price: "$8" },
-  { id: 4, name: "Guantes Fox", price: "$18" },
-  { id: 5, name: "Cadena DID", price: "$35" },
-  { id: 6, name: "Freno delantero", price: "$25" },
-  { id: 7, name: "Llanta Pirelli", price: "$70" },
-  { id: 8, name: "Retrovisores", price: "$15" },
-  { id: 9, name: "Kit de luces LED", price: "$22" },
-  { id: 10, name: "Filtro de aire", price: "$14" },
+  { id: 1, name: "Casco LS2", price: "$55", image: img7 },
+  { id: 2, name: "Aceite Motul", price: "$12", image: img4 },
+  { id: 3, name: "Bujía NGK", price: "$8", image: img5 },
+  { id: 4, name: "Guantes Fox", price: "$18", image: img10 },
+  { id: 5, name: "Cadena DID", price: "$35", image: img6 },
+  { id: 6, name: "Freno delantero", price: "$25", image: img9 },
+  { id: 7, name: "Llanta Pirelli", price: "$70", image: img12 },
+  { id: 8, name: "Retrovisores", price: "$15", image: img13 },
+  { id: 9, name: "Kit de luces LED", price: "$22", image: img11 },
+  { id: 10, name: "Filtro de aire", price: "$14", image: img8 },
 ];
 
-  const imagenes = [img1, img2, img3];
+const imagenes = [img1, img2, img3];
+
 const [index, setIndex] = useState(0);
+
 useEffect(() => {
+
   const intervalo = setInterval(() => {
+
     setIndex((prev) =>
       prev === imagenes.length - 1 ? 0 : prev + 1
     );
+
   }, 4000);
 
   return () => clearInterval(intervalo);
+
 }, []);
+
+
+// ======================================
+// FUNCION PARA AGREGAR AL CARRITO
+// ======================================
+
+const addToCart = (product) => {
+
+  const carritoActual =
+    JSON.parse(localStorage.getItem("carrito")) || [];
+
+  carritoActual.push(product);
+
+  localStorage.setItem(
+    "carrito",
+    JSON.stringify(carritoActual)
+  );
+
+ alert(`${product.name} agregado al carrito`);
+
+};
+
 
   return (
     <>
@@ -122,21 +209,27 @@ useEffect(() => {
 
     <div className="featured-track">
 
-      {[...featuredProducts, ...featuredProducts].map((p, i) => (
+{featuredProducts.map((p, i) => (
 
-        <div className="featured-card" key={i}>
+  <div className="featured-card" key={i}>
 
-          <div className="product-image"></div>
+    <img
+      src={p.image}
+      alt={p.name}
+      className="product-image"
+    />
 
-          <h3>{p.name}</h3>
+    <h3>{p.name}</h3>
 
-          <p>{p.price}</p>
+    <p>{p.price}</p>
 
-          <button>Agregar</button>
+    <button onClick={() => addToCart(p)}>
+  Agregar
+</button>
 
-        </div>
+  </div>
 
-      ))}
+))}
 
     </div>
 
@@ -157,19 +250,25 @@ useEffect(() => {
 
       <div className="grid">
 
-        {[...cat.items, ...cat.items, ...cat.items, ...cat.items].slice(0,8).map((p, i) => (
+        {cat.items.map((p, i) => (
 
-          <div key={i} className="card">
+       <div key={i} className="card">
 
-            <div className="product-image"></div>
+  <img
+    src={p.image}
+    alt={p.name}
+    className="product-image"
+  />
 
-            <h3>{p.name}</h3>
+  <h3>{p.name}</h3>
 
-            <p>{p.price}</p>
+  <p>{p.price}</p>
 
-            <button>Agregar</button>
+  <button onClick={() => addToCart(p)}>
+  Agregar
+</button>
 
-          </div>
+</div>
 
         ))}
 

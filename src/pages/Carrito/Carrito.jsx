@@ -3,7 +3,8 @@ import "./carrito.css";
 
 export default function Carrito() {
 
-  const carrito = [];
+  const carrito =
+  JSON.parse(localStorage.getItem("carrito")) || [];
 
   return (
     <section className="cart-page">
@@ -36,9 +37,52 @@ export default function Carrito() {
 
         ) : (
 
-          <div>
-            carrito lleno
-          </div>
+          <div className="cart-items">
+
+  <h1>Tu carrito</h1>
+
+  <button
+  className="clear-cart-btn"
+  onClick={() => {
+
+    localStorage.removeItem("carrito");
+
+    window.location.reload();
+
+  }}
+>
+  Vaciar carrito
+</button>
+
+  {carrito.map((p, i) => (
+
+    <div key={i} className="cart-item">
+
+      <img
+        src={p.image}
+        alt={p.name}
+        className="cart-image"
+      />
+
+      <div>
+
+<div className="cart-info">
+
+  <h3>{p.name}</h3>
+
+  <p className="cart-price">
+    Precio: {p.price}
+  </p>
+
+</div>
+
+      </div>
+
+    </div>
+
+  ))}
+
+</div>
 
         )}
 

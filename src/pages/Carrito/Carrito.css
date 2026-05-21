@@ -77,3 +77,52 @@
 .continue-btn:hover{
   background:#2563eb;
 }
+
+.cart-items {
+  max-width: 900px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.cart-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.clear-cart-btn {
+  background: #d62828;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.clear-cart-btn:hover {
+  background: #a4161a;
+}
+
+.cart-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-price {
+  color: #1f4f7a;
+  font-weight: bold;
+  font-size: 18px;
+}
