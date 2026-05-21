@@ -1,17 +1,22 @@
 import "./nosotros.css";
 
+// =======================
+// IMPORTACIÓN DE IMÁGENES
+// =======================
+import vitrina from "../../assets/images/vitrina.png";
+import trabajador from "../../assets/images/trabajador.png";
+import productos from "../../assets/images/productos.png";
+import tienda from "../../assets/images/tienda.png";
+
 export default function Nosotros() {
   return (
     <section className="about">
 
       {/* HERO */}
-
       <div className="about-hero">
-
         <div className="about-overlay"></div>
 
         <div className="about-content">
-
           <span>REPUESTOS AVENDAÑO</span>
 
           <h1>
@@ -25,18 +30,14 @@ export default function Nosotros() {
             motocicletas con excelente calidad y
             precios accesibles.
           </p>
-
         </div>
-
       </div>
 
       {/* MISION Y VISION */}
-
       <section className="about-section">
 
         <div className="about-card">
           <h2>Misión</h2>
-
           <p>
             Brindar a nuestros clientes repuestos para
             motocicletas de excelente calidad, ofreciendo
@@ -48,7 +49,6 @@ export default function Nosotros() {
 
         <div className="about-card">
           <h2>Visión</h2>
-
           <p>
             Convertirnos en una empresa sólida y reconocida
             a nivel nacional, expandiéndonos hacia otros
@@ -60,34 +60,26 @@ export default function Nosotros() {
       </section>
 
       {/* GALERIA */}
-
       <section className="gallery">
 
-        <h2>Nuestro mundo sobre ruedas</h2>
+        <h2>Nosotros</h2>
 
         <div className="gallery-grid">
 
-          <img
-            src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200"
-            alt=""
-          />
+          {/* 1. vitrina */}
+          <img src={vitrina} alt="Vitrina de productos" />
 
-          <img
-            src="https://images.unsplash.com/photo-1517846693594-1567da72af75?q=80&w=1200"
-            alt=""
-          />
+          {/* 2. trabajador */}
+          <img src={trabajador} alt="Trabajador" />
 
-          <img
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200"
-            alt=""
-          />
+          {/* 3. productos */}
+          <img src={productos} alt="Productos" />
 
         </div>
 
       </section>
 
       {/* HISTORIA */}
-
       <section className="history">
 
         <div className="history-text">
@@ -129,13 +121,9 @@ export default function Nosotros() {
 
         </div>
 
+        {/* TIENDA abajo junto a historia */}
         <div className="history-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?q=80&w=1200"
-            alt=""
-          />
-
+          <img src={tienda} alt="Tienda Repuestos Avendaño" />
         </div>
 
       </section>
