@@ -1,9 +1,47 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 import logo from "../../assets/logos/logo.png";
 
 import "./login.css";
 
 export default function Login() {
+
+  const navigate = useNavigate();
+
+  const [correo, setCorreo] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  // USUARIO QUEMADO
+  const usuarioDemo = {
+    correo: "admin@gmail.com",
+    password: "123456",
+    nombre: "Fifi"
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    if (
+      correo === usuarioDemo.correo &&
+      password === usuarioDemo.password
+    ) {
+
+      // GUARDAR SESION
+      localStorage.setItem(
+        "usuario",
+        JSON.stringify(usuarioDemo)
+      );
+
+      // ///////////
+      navigate("/");
+
+    } else {
+      setError("Correo o contraseña incorrectos");
+    }
+  };
+
   return (
     <section className="login-page">
 
@@ -23,13 +61,18 @@ export default function Login() {
           Moto Repuestos Avendaño
         </p>
 
-        <form className="login-form">
+        <form
+          className="login-form"
+          onSubmit={handleLogin}
+        >
 
           <label>Correo</label>
 
           <input
             type="email"
             placeholder="micorreo@ejemplo.com"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
           />
 
           <label>Contraseña</label>
@@ -37,11 +80,21 @@ export default function Login() {
           <input
             type="password"
             placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
+
+          {
+  error && (
+    <div className="login-error">
+      {error}
+    </div>
+  )
+}
 
           <div className="recover">
 
-            <Link to="/recuperar-password ">
+            <Link to="/recuperar-password">
               Recuperar contraseña
             </Link>
 
@@ -60,7 +113,7 @@ export default function Login() {
 
           ¿No tienes cuenta?{" "}
 
-          <Link to="/Registro ">
+          <Link to="/registro">
             Registrarse
           </Link>
 

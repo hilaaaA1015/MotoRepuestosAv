@@ -1,7 +1,19 @@
 import "./Hero.css";
 
 export default function Hero() {
+
+  const irProductos = () => {
+
+    const seccion =
+      document.getElementById("productos");
+
+    seccion?.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
   return (
+
     <section className="home">
 
       <div className="overlay"></div>
@@ -23,11 +35,12 @@ export default function Hero() {
 
         <div className="hero-buttons">
 
-          <button className="btn-primary">
+          <button
+            className="btn-primary"
+            onClick={irProductos}
+          >
             Ver productos
           </button>
-
-
 
         </div>
 
