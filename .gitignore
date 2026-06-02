@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Esto es porque yo (David) estoy usando pnpm y no npm, no afecta el proyecto
+pnpm-lock.yaml
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

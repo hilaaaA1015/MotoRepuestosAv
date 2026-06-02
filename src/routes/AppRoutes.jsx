@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
 
@@ -8,11 +8,10 @@ import Contacto from "../pages/Contacto/Contacto";
 import Nosotros from "../pages/Nosotros/Nosotros";
 import Carrito from "../pages/Carrito/Carrito";
 import Login from "../pages/Login/Login";
-
 import Registro from "../pages/Registro/Registro";
 import RecuperarPassword from "../pages/RecuperarPassword/RecuperarPassword";
 import Perfil from "../pages/Perfil/Perfil";
-
+import ProductoDetalle from "../pages/DetallesProducto/DetallesProducto";
 // PAGINAS EXTRA
 
 
@@ -79,6 +78,15 @@ export default function AppRoutes() {
       />
 
       <Route
+        path="/producto/:id"
+        element={
+          <MainLayout>
+            <ProductoDetalle />
+          </MainLayout>
+        }
+      />
+
+      <Route
         path="/perfil"
         element={
           <MainLayout>
@@ -88,34 +96,35 @@ export default function AppRoutes() {
       />
 
       <Route
-  path="/registro"
-  element={
-    <MainLayout>
-      <Registro />
-    </MainLayout>
-  }
-/>
+        path="/registro"
+        element={
+          <MainLayout>
+            <Registro />
+          </MainLayout>
+        }
+      />
 
-<Route
-  path="/recuperar-password"
-  element={
-    <MainLayout>
-      <RecuperarPassword />
-    </MainLayout>
-  }
-/>
+      <Route
+        path="/recuperar-password"
+        element={
+          <MainLayout>
+            <RecuperarPassword />
+          </MainLayout>
+        }
+      />
 
-<Route
-  path="/perfil"
-  element={
-    <MainLayout>
-      <Perfil />
-    </MainLayout>
-  }
-/>
+      <Route
+        path="/perfil"
+        element={
+          <MainLayout>
+            <Perfil />
+          </MainLayout>
+        }
+      />
 
       <Route path="*" element={<NotFound />} />
 
     </Routes>
+
   );
 }

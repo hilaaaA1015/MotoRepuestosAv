@@ -218,3 +218,47 @@ body{
   }
 
 }
+
+.cart-wrapper {
+  position: relative;
+  display: inline-block; /* Mantiene el comportamiento de bloque en línea nativo */
+}
+
+.cart-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;         /* Ajustado para el nuevo contenedor */
+  right: -5px;       /* Ajustado para el nuevo contenedor */
+  background-color: #ef4444; /* Rojo vibrante */
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 50%;
+  
+  /* Dimensiones del círculo */
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10; /* Asegura que quede por encima del botón */
+  
+  /* Evita que el texto o número se hereden de forma extraña */
+  line-height: 1; 
+  
+  /* Animación sutil */
+  animation: popBadge 0.2s ease-out;
+}
+
+@keyframes popBadge {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1); }
+}

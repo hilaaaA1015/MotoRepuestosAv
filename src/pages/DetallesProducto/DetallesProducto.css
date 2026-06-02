@@ -1,0 +1,211 @@
+/* ================= CONTENEDOR PRINCIPAL ================= */
+
+.detail-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+  font-family: sans-serif;
+  background: transparent; /* Permite ver el fondo degradado del body */
+}
+
+/* ESTRUCTURA DISPOSICIÓN (Grid de 2 columnas) */
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+/* ================= CAJA DE IMAGEN (Izquierda) ================= */
+
+.product-image-box {
+  background: #1e293b; /* Mismo color de fondo de tus tarjetas (cards) del Home */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Sutil borde idéntico a tus cards */
+  padding: 30px;
+  border-radius: 24px; /* Bordes suavizados en armonía con el carrusel */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image-box img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+/* ================= INFORMACIÓN DEL PRODUCTO (Derecha) ================= */
+
+.product-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Etiqueta superior de categoría */
+.category-tag {
+  color: #cbd5e1; /* Gris claro idéntico a tus textos secundarios del Home */
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* Título del Producto */
+.product-info-box h1 {
+  font-size: 36px;
+  color: white; /* Blanco nítido */
+  margin: 0;
+  font-weight: 700;
+}
+
+/* EL PRECIO (Blanco puro y destacado como lo solicitaste) */
+.price-tag {
+  font-size: 32px;
+  color: white; /* Totalmente blanco para máximo contraste */
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+/* Línea Divisoria */
+.divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1); /* Línea clara muy sutil */
+  margin: 10px 0;
+}
+
+/* Descripción del producto */
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbd5e1; /* Gris claro legible, sin cansar la vista */
+  margin: 0;
+}
+
+/* ================= ZONA DE COMPRA ESTILO AMAZON ================= */
+
+.purchase-card {
+  background: #1e293b; /* Fondo de tarjeta de la Home */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 18px;
+  max-width: 350px;
+  margin-top: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Selector de Cantidad */
+.quantity-field {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.quantity-field label {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.quantity-field select {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #0f172a; /* Fondo ultra oscuro contrastante */
+  color: white; /* Texto del selector blanco */
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+
+.quantity-field select:focus {
+  border-color: #2563eb; /* Al hacer click cambia al azul de tu marca */
+}
+
+/* Botón de Agregar al carrito (Estilo idéntico a tus botones del Home) */
+.btn-add-cart {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb; /* Azul eléctrico de tu Home */
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-add-cart:hover {
+  background: #1d4ed8; /* Degradado al pasar el mouse */
+  transform: translateY(-2px);
+}
+
+/* Caso especial si el producto no existe (Error) */
+.error-msg {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+}
+
+.error-msg button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.error-msg button:hover {
+  background: #1d4ed8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .detail-container {
+    padding: 0 20px;
+  }
+
+  .product-layout {
+    grid-template-columns: 1fr; /* Una columna en celulares */
+    gap: 30px;
+  }
+
+  .product-image-box {
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .product-image-box img {
+    max-height: 300px;
+  }
+
+  .product-info-box h1 {
+    font-size: 28px;
+  }
+
+  .price-tag {
+    font-size: 26px;
+  }
+
+  .purchase-card {
+    max-width: 100%; /* Toma todo el ancho en móviles */
+  }
+}
+
+.related-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

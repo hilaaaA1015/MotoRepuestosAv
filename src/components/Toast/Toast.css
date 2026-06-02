@@ -1,0 +1,55 @@
+/* Contenedor fijo en la esquina superior derecha */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilo moderno de la tarjeta de notificación */
+.toast-card {
+  background: #1e293b;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid #2563eb; /* Detalle azul de tu tema */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+  font-weight: 500;
+  font-size: 15px;
+  
+  /* Animación de entrada fluida */
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Icono circular de verificación */
+.toast-icon {
+  background: rgba(37, 99, 235, 0.2);
+  color: #2563eb;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

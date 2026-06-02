@@ -250,3 +250,10 @@ body {
     min-width: 220px;
   }
 }
+
+.card a,
+.featured-card a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color blanco/gris configurado en el Home */
+  display: block; /* Mantiene la estructura de bloque de la tarjeta */
+}
