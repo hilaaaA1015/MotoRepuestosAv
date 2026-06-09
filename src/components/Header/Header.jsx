@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logos/logo.png";
+import { FiShoppingCart, FiUser } from "react-icons/fi";
 
 import "./header.css";
 
@@ -75,9 +76,10 @@ export default function Header() {
 
         {/* Este contenedor es para que el tamaño del boton no se desajuste por la funcion de señalar cuantos productos hay en el carrito */}
         <div className="cart-wrapper">
-          <Link to="/carrito" className="cart-btn">
-            🛒 Carrito
-          </Link>
+          <Link to="/carrito" className="icon-btn">
+  <FiShoppingCart />
+</Link>
+          
 
           {/* La burbuja con el numero de productos del carrito floja en el contenedor y no en el boton como tal */}
           {cartCount > 0 && (
@@ -89,20 +91,20 @@ export default function Header() {
           usuario ? (
 
             <Link
-              to="/perfil"
-              className="login-btn"
-            >
-              Mi Perfil
-            </Link>
+  to="/perfil"
+  className="icon-btn profile-btn"
+>
+  <FiUser />
+</Link>
 
           ) : (
 
             <Link
-              to="/login"
-              className="login-btn"
-            >
-              Iniciar sesión
-            </Link>
+  to="/login"
+  className="icon-btn"
+>
+  <FiUser />
+</Link>
 
           )
         }
