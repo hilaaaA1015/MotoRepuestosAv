@@ -1,12 +1,21 @@
+/* ===========================
+   PÁGINA DEL CARRITO
+=========================== */
+
 .cart-page{
-  min-height:100vh;
-  padding:120px 40px 40px;
+  min-height:calc(100vh - 65px); /* 65px = altura del Header */
+
+  padding:100px 40px 40px;
+
   background:linear-gradient(
     135deg,
     #172033,
     #243247,
     #111827
   );
+
+  display:flex;
+  justify-content:center;
 }
 
 .cart-container{
@@ -231,15 +240,26 @@
 }
 
 .empty-cart{
+
   max-width:600px;
-  margin:80px auto;
+
+  margin:0 auto;
+
+  min-height:calc(100vh - 180px);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
   padding:50px;
-  text-align:center;
 
   background:#1e293b;
+
   border-radius:25px;
 
   color:white;
+
 }
 
 .empty-cart img{

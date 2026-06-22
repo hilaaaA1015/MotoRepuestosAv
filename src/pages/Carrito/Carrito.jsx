@@ -48,20 +48,34 @@ const [tarjeta, setTarjeta] =
   0
 );
 
-  const eliminarProducto = (index) => {
-    const nuevoCarrito = carrito.filter(
-      (_, i) => i !== index
-    );
+ // =============================
+// ELIMINAR PRODUCTO
+// =============================
+const eliminarProducto = (index) => {
 
-    localStorage.setItem(
-      "carrito",
-      JSON.stringify(nuevoCarrito)
-    );
+  const nuevoCarrito = carrito.filter(
+    (_, i) => i !== index
+  );
 
-    setCarrito(nuevoCarrito);
-  };
+  localStorage.setItem(
+    "carrito",
+    JSON.stringify(nuevoCarrito)
+  );
 
-  const aumentarCantidad = (index) => {
+  setCarrito(nuevoCarrito);
+
+  // Actualizar contador del Header
+  window.dispatchEvent(
+    new Event("localCartUpdated")
+  );
+
+};
+
+  // =============================
+// AUMENTAR CANTIDAD
+// =============================
+const aumentarCantidad = (index) => {
+
   const nuevoCarrito = [...carrito];
 
   nuevoCarrito[index].cantidad =
@@ -73,9 +87,19 @@ const [tarjeta, setTarjeta] =
   );
 
   setCarrito(nuevoCarrito);
+
+  // Actualizar contador del Header
+  window.dispatchEvent(
+    new Event("localCartUpdated")
+  );
+
 };
 
+// =============================
+// DISMINUIR CANTIDAD
+// =============================
 const disminuirCantidad = (index) => {
+
   const nuevoCarrito = [...carrito];
 
   if ((nuevoCarrito[index].cantidad || 1) > 1) {
@@ -88,6 +112,12 @@ const disminuirCantidad = (index) => {
   );
 
   setCarrito(nuevoCarrito);
+
+  // Actualizar contador del Header
+  window.dispatchEvent(
+    new Event("localCartUpdated")
+  );
+
 };
 
   return (
