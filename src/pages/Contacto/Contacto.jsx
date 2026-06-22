@@ -1,69 +1,127 @@
 import "./contacto.css";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+} from "react-icons/fa";
 
 export default function Contacto() {
   return (
+    /* =====================================================
+       SECCIÓN CONTACTO
+    ====================================================== */
     <section className="contact">
 
+      {/* ---------- Encabezado ---------- */}
+      <div className="contact-header">
+
+        <span className="contact-subtitle">
+          CONTACTO
+        </span>
+
+        <h2>
+          Estamos listos para ayudarte
+        </h2>
+
+
+      </div>
+
+      {/* ---------- Contenedor principal ---------- */}
       <div className="contact-container">
 
-        {/* INFO */}
+        {/* =====================================================
+            INFORMACIÓN DE CONTACTO
+        ====================================================== */}
         <div className="contact-info">
 
-          <span className="contact-subtitle">
-            CONTACTO
-          </span>
+          {/* Tarjeta Dirección */}
+          <div className="info-card">
 
-          <h1>
-            Hablemos sobre tu motocicleta
-          </h1>
-
-          <p>
-            ¿Necesitas repuestos, accesorios o ayuda
-            con algún producto? Escríbenos y te
-            responderemos lo antes posible.
-          </p>
-
-          <div className="contact-data">
-
-            <div className="data-box">
-              <h3>📍 Dirección</h3>
-              <span>Managua, Nicaragua</span>
+            <div className="icon">
+              <FaMapMarkerAlt />
             </div>
 
-            <div className="data-box">
-              <h3>📞 Teléfono</h3>
-              <span>+505 8888-8888</span>
+            <div>
+              <h3>Dirección</h3>
+              <p>Managua, Nicaragua</p>
             </div>
 
-            <div className="data-box">
-              <h3>✉️ Correo</h3>
-              <span>motosavendano@gmail.com</span>
+          </div>
+
+          {/* Tarjeta Teléfono */}
+          <div className="info-card">
+
+            <div className="icon">
+              <FaPhoneAlt />
+            </div>
+
+            <div>
+              <h3>Teléfono</h3>
+              <p>+505 8133-2966</p>
+            </div>
+
+          </div>
+
+          {/* Tarjeta Correo */}
+          <div className="info-card">
+
+            <div className="icon">
+              <FaEnvelope />
+            </div>
+
+            <div>
+              <h3>Correo</h3>
+              <p>motosavendano@gmail.com</p>
             </div>
 
           </div>
 
         </div>
 
-        {/* FORMULARIO */}
+        {/* =====================================================
+            FORMULARIO
+        ====================================================== */}
         <div className="contact-form-box">
 
           <form className="contact-form">
 
-            <input
-              type="text"
-              placeholder="Nombre"
-            />
+            {/* Nombre */}
+            <div className="form-group">
 
-            <input
-              type="email"
-              placeholder="Correo electrónico"
-            />
+              <label>Nombre completo</label>
 
-            <textarea
-              rows="6"
-              placeholder="Escribe tu mensaje..."
-            ></textarea>
+              <input
+                type="text"
+                placeholder="Ingresa tu nombre"
+              />
 
+            </div>
+
+            {/* Correo */}
+            <div className="form-group">
+
+              <label>Correo electrónico</label>
+
+              <input
+                type="email"
+                placeholder="ejemplo@gmail.com"
+              />
+
+            </div>
+
+            {/* Mensaje */}
+            <div className="form-group">
+
+              <label>Mensaje</label>
+
+              <textarea
+                rows={6}
+                placeholder="Escribe aquí tu consulta..."
+              ></textarea>
+
+            </div>
+
+            {/* Botón */}
             <button type="submit">
               Enviar mensaje
             </button>

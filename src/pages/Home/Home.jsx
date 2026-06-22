@@ -23,6 +23,29 @@ export default function Home() {
   const fullText = "Encuentra repuestos, accesorios y lubricantes para tu moto al mejor precio.";
   const imagenes = [img1, img2, img3];
 
+const brands = [
+  {
+    name: "Honda",
+    logo: "https://cdn.simpleicons.org/honda/e40521"
+  },
+  {
+    name: "Yamaha",
+    logo: "https://cdn.simpleicons.org/yamahamotorcorporation/ffffff"
+  },
+  {
+    name: "Suzuki",
+    logo: "https://cdn.simpleicons.org/suzuki/e30613"
+  },
+  {
+    name: "Bajaj",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bajaj_Auto_Ltd_logo.svg"
+  },
+  {
+    name: "Motul",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Motul_logo.svg"
+  }
+];
+
   useEffect(() => {
     let i = 0;
     const typing = setInterval(() => {
@@ -72,7 +95,10 @@ export default function Home() {
     window.dispatchEvent(new Event("localCartUpdated"));
   };
 
+
+
   return (
+<main className="home-page">
     <>
       {/* NOTIFICACIÓN EN TIEMPO REAL */}
       {toastMessage && (
@@ -83,6 +109,8 @@ export default function Home() {
           </div>
         </div>
       )}
+
+       
 
       <Hero text={text} />
 
@@ -98,8 +126,29 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Marcas */}
+  <section className="brands-section">
+
+    <h2>Trabajamos con las mejores marcas</h2>
+
+    <div className="brands-grid">
+
+        {brands.map((brand) => (
+
+            <div className="brand-card" key={brand.name}>
+
+                <img src={brand.logo} alt={brand.name} />
+
+            </div>
+
+        ))}
+
+    </div>
+
+</section>
+
       {/* SECCIÓN DESTACADOS */}
-      <section className="featured-section">
+      <section className="featured-section" id="productos">
         <h2>Productos Destacados</h2>
         <div className="featured-slider">
           <div className="featured-track">
@@ -118,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN CATEGORIAS */}
-      <section className="products" id="productos">
+      <section className="products">
         {categories.map((cat) => (
           <div key={cat.title} className="category">
             <h2>{cat.title}</h2>
@@ -138,9 +187,25 @@ export default function Home() {
         ))}
       </section>
 
+
+
+
       <div className="catalog-container">
         <button className="catalog-btn"> Descargar Catálogo </button>
       </div>
+        <a
+  href="https://wa.me/50578738726?text=Hola,%20estoy%20interesado%20en%20sus%20productos"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="whatsapp-float"
+>
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+    alt="WhatsApp"
+  />
+</a>
+
     </>
+    </main>
   );
 }

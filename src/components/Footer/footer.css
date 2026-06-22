@@ -92,3 +92,35 @@
   font-size: 14px;
   color: #cbd5e1;
 }
+
+/* REDES SOCIALES */
+.socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* ICONOS */
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;   /* 👈 MÁS GRANDE */
+  height: 48px;
+
+  border-radius: 12px; /* opcional, look moderno */
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* ICONO SVG (react-icons) */
+.socials a svg {
+  font-size: 24px; /* 👈 tamaño del icono */
+}
+
+/* HOVER */
+.socials a:hover {
+  transform: translateY(-4px);
+  opacity: 0.85;
+}

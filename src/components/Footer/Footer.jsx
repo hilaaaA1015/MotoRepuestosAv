@@ -1,8 +1,5 @@
 import "./Footer.css";
-
-import fb from "../../assets/icons/fb.png";
-import ig from "../../assets/icons/ig.png";
-import ws from "../../assets/icons/ws.png";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -40,16 +37,16 @@ export default function Footer() {
 
           <div className="socials">
 
-            <a href="#" className="icon">
-              <img src={fb} alt="Facebook" />
+            <a href="#" className="social facebook">
+              <FaFacebookF />
             </a>
 
-            <a href="#" className="icon">
-              <img src={ig} alt="Instagram" />
+            <a href="#" className="social instagram">
+              <FaInstagram />
             </a>
 
-            <a href="#" className="icon">
-              <img src={ws} alt="WhatsApp" />
+            <a href="#" className="social whatsapp">
+              <FaWhatsapp />
             </a>
 
           </div>

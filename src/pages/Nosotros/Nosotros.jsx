@@ -58,26 +58,26 @@ export default function Nosotros() {
         </div>
 
       </section>
+      
 
       {/* GALERIA */}
+      {/*
       <section className="gallery">
 
         <h2>Nosotros</h2>
 
         <div className="gallery-grid">
 
-          {/* 1. vitrina */}
           <img src={vitrina} alt="Vitrina de productos" />
 
-          {/* 2. trabajador */}
           <img src={trabajador} alt="Trabajador" />
 
-          {/* 3. productos */}
           <img src={productos} alt="Productos" />
 
         </div>
 
       </section>
+      */}
 
       {/* HISTORIA */}
       <section className="history">
